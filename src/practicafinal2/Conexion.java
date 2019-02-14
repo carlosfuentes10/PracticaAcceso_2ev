@@ -197,6 +197,8 @@ public class Conexion {
         }
     }
     
+    
+    
      public void eliminarCliente(String dni1_eliminado) {
         try {
             conect.setAutoCommit(false);
@@ -229,6 +231,66 @@ public class Conexion {
 
             Statement sta = conect.createStatement();
             sta.executeUpdate("DELETE FROM empleado WHERE DNI_empleado LIKE '" + dni2_eliminado +"'");
+            sta.close();
+
+            conect.commit();
+        } catch (Exception e) {
+            System.out.println("Error");
+
+            try {
+                if (conect != null) {
+                    conect.rollback();
+                }
+            } catch (Exception se2) {
+                se2.printStackTrace();
+                cadena_resultado = se2.toString();
+            }
+
+            e.printStackTrace();
+            cadena_resultado = e.toString();
+        }
+    }
+    
+    
+     public void modificarEmpleadoNuevo (String ID_tienda,String nombre, String apellido, String DNI, String telefono, String direccion, String puesto) {
+        try {
+            conect.setAutoCommit(false);
+
+            Statement sta = conect.createStatement();
+
+            sta.executeUpdate("UPDATE empleado SET DNI_empleado('" + ID_tienda + "', '" + DNI + "', '" + nombre + "', '" + apellido + "', '" + direccion + "', '" + telefono + "', '" + puesto + "')");
+
+            System.out.println("modificado empleado correctamente");
+
+            sta.close();
+
+            conect.commit();
+        } catch (Exception e) {
+            System.out.println("Error");
+
+            try {
+                if (conect != null) {
+                    conect.rollback();
+                }
+            } catch (Exception se2) {
+                se2.printStackTrace();
+                cadena_resultado = se2.toString();
+            }
+
+            e.printStackTrace();
+            cadena_resultado = e.toString();
+        }
+    }
+     public void modificarClientedoNuevo (String ID_tienda,String nombre, String apellido, String DNI, String telefono, String direccion, String sexo) {
+        try {
+            conect.setAutoCommit(false);
+
+            Statement sta = conect.createStatement();
+
+            sta.executeUpdate("UPDATE cliente SET DNI_cliente('" + ID_tienda + "', '" + DNI + "', '" + nombre + "', '" + apellido + "', '" + direccion + "', '" + telefono + "', '" + sexo + "')");
+
+            System.out.println("modificado cliente correctamente");
+
             sta.close();
 
             conect.commit();
