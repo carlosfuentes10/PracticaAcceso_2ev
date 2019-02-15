@@ -252,18 +252,17 @@ public class Conexion {
     }
     
     
-     public void modificarEmpleadoNuevo (String ID_tienda,String nombre, String apellido, String DNI_cliente, String telefono, String direccion, String puesto) {
+     public void modificarEmpleadoNuevo (String ID_tienda,String DNI_empleado, String nombre, String apellido, String direccion, String telefono, String puesto) {
         try {
             conect.setAutoCommit(false);
 
             Statement sta = conect.createStatement();
 
            
-            String query = "UPDATE  empleado SET  ID_tienda='" + ID_tienda + "', nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono + ", direccion=" + direccion + ", puesto=" + puesto + " WHERE DNI_cliente='" + DNI_cliente+ "';";
-
-            System.out.println("modificado empleado correctamente");
-
-            sta.close();
+            String query = "UPDATE  empleado SET  ID_tienda='" + ID_tienda + "', nombre='" + nombre + "', apellido='" + apellido + "', telefono='" + telefono + "', direccion='" + direccion + "', puesto='" + puesto + "' WHERE DNI_empleado='" + DNI_empleado+ "';";
+            System.out.println(query);
+            sta.executeUpdate(query);
+            System.out.println("Empleado modificado correctamente");
 
             conect.commit();
         } catch (Exception e) {
@@ -282,17 +281,20 @@ public class Conexion {
             cadena_resultado = e.toString();
         }
     }
-     public void modificarClientedoNuevo (String ID_tienda,String nombre, String apellido, String DNI, String telefono, String direccion, String sexo) {
+     public void modificarClientedoNuevo (String ID_tienda,String DNI_cliente, String nombre, String apellido, String telefono, String direccion, String sexo) {
         try {
             conect.setAutoCommit(false);
 
             Statement sta = conect.createStatement();
 
-            sta.executeUpdate("UPDATE cliente SET DNI_cliente('" + ID_tienda + "', '" + DNI + "', '" + nombre + "', '" + apellido + "', '" + direccion + "', '" + telefono + "', '" + sexo + "')");
+            String query = "UPDATE  cliente SET  ID_tienda='" + ID_tienda + "', nombre='" + nombre + "', apellido='" + apellido + "', telefono='" + telefono + "', direccion='" + direccion + "', sexo='" + sexo + "' WHERE DNI_cliente='" + DNI_cliente+ "';";
+            System.out.println(query);
+            sta.executeUpdate(query);
+            
 
-            System.out.println("modificado cliente correctamente");
+            System.out.println("Cliente modificado correctamente");
 
-            sta.close();
+           
 
             conect.commit();
         } catch (Exception e) {

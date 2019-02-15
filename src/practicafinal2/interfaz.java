@@ -99,7 +99,7 @@ public class interfaz extends javax.swing.JFrame {
         alta_empleado = new javax.swing.JButton();
         tienda_cliente = new javax.swing.JTextField();
         tienda_empleado = new javax.swing.JTextField();
-        modificar = new javax.swing.JButton();
+        modificar_cliente = new javax.swing.JButton();
         modificar3 = new javax.swing.JTextField();
         modificar2 = new javax.swing.JTextField();
         modificar4 = new javax.swing.JTextField();
@@ -127,6 +127,7 @@ public class interfaz extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
+        modificar_empleado = new javax.swing.JButton();
 
         jLabel3.setText("     APELLIDOS");
 
@@ -323,11 +324,11 @@ public class interfaz extends javax.swing.JFrame {
             }
         });
 
-        modificar.setBackground(new java.awt.Color(255, 102, 102));
-        modificar.setText("MODIFICAR");
-        modificar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificarMouseClicked(evt);
+        modificar_cliente.setBackground(new java.awt.Color(255, 102, 102));
+        modificar_cliente.setText("MODIFICAR CLIENTE");
+        modificar_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificar_clienteActionPerformed(evt);
             }
         });
 
@@ -370,6 +371,14 @@ public class interfaz extends javax.swing.JFrame {
         jLabel14.setText("    Nº TIENDA");
 
         jLabel15.setText("           DNI");
+
+        modificar_empleado.setBackground(new java.awt.Color(255, 102, 102));
+        modificar_empleado.setText("MODIFICAR EMPLEADO");
+        modificar_empleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificar_empleadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -442,23 +451,6 @@ public class interfaz extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)
-                                .addComponent(modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(modificar3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(modificar4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(modificar5, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(modificar6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(modificar7, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(modificar))
-                            .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -496,7 +488,28 @@ public class interfaz extends javax.swing.JFrame {
                         .addComponent(dni2_eliminado, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Eliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)))
+                        .addGap(42, 42, 42))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(modificar3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(modificar4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(modificar5, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(modificar6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(modificar7, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(modificar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(modificar_empleado)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addComponent(jSeparator5)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -595,9 +608,11 @@ public class interfaz extends javax.swing.JFrame {
                     .addComponent(modificar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modificar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modificar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modificar)
+                    .addComponent(modificar_cliente)
                     .addComponent(modificar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(modificar_empleado)
+                .addGap(5, 5, 5))
         );
 
         pack();
@@ -810,9 +825,14 @@ public class interfaz extends javax.swing.JFrame {
 
     }//GEN-LAST:event_coloca_datosActionPerformed
 
-    private void modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificarMouseClicked
-        gc.modificarClientedoNuevo(modificar1.getText(), modificar2.getText(), modificar3.getText(), modificar4.getText(), modificar5.getText(), modificar6.getText(), modificar7.getText());
-    }//GEN-LAST:event_modificarMouseClicked
+    private void modificar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_clienteActionPerformed
+        
+    }//GEN-LAST:event_modificar_clienteActionPerformed
+
+    private void modificar_empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_empleadoActionPerformed
+        gc.modificarEmpleadoNuevo(modificar1.getText(), modificar2.getText(), modificar3.getText(), modificar4.getText(), modificar5.getText(), modificar6.getText(), modificar7.getText());
+        consulta_empleadoActionPerformed(evt);
+    }//GEN-LAST:event_modificar_empleadoActionPerformed
     Conexion gc = new Conexion();
     /**
      * @param args the command line arguments
@@ -892,7 +912,6 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTable jTable2;
-    private javax.swing.JButton modificar;
     private javax.swing.JTextField modificar1;
     private javax.swing.JTextField modificar2;
     private javax.swing.JTextField modificar3;
@@ -900,6 +919,8 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField modificar5;
     private javax.swing.JTextField modificar6;
     private javax.swing.JTextField modificar7;
+    private javax.swing.JButton modificar_cliente;
+    private javax.swing.JButton modificar_empleado;
     private javax.swing.JTextField nombre_cliente;
     private javax.swing.JTextField nombre_empleado;
     private javax.swing.JTextField puesto_empleado;
