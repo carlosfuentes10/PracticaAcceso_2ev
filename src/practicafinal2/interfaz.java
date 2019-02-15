@@ -330,63 +330,6 @@ public class interfaz extends javax.swing.JFrame {
                 modificarMouseClicked(evt);
             }
         });
-        modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarActionPerformed(evt);
-            }
-        });
-
-        modificar3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificar3MouseClicked(evt);
-            }
-        });
-
-        modificar2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificar2MouseClicked(evt);
-            }
-        });
-
-        modificar4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificar4MouseClicked(evt);
-            }
-        });
-
-        modificar5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificar5MouseClicked(evt);
-            }
-        });
-        modificar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificar5ActionPerformed(evt);
-            }
-        });
-
-        modificar6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificar6MouseClicked(evt);
-            }
-        });
-
-        modificar7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificar7MouseClicked(evt);
-            }
-        });
-
-        modificar1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modificar1MouseClicked(evt);
-            }
-        });
-        modificar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificar1ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("        NOMBRE");
 
@@ -581,14 +524,15 @@ public class interfaz extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel12)
+                        .addComponent(jLabel13)
+                        .addComponent(jLabel14)
+                        .addComponent(jLabel15)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel11)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombre_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -844,46 +788,6 @@ public class interfaz extends javax.swing.JFrame {
     private void tienda_empleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tienda_empleadoMouseClicked
         tienda_empleado.setText("");
     }//GEN-LAST:event_tienda_empleadoMouseClicked
-
-    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificarActionPerformed
-
-    private void modificar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar3MouseClicked
-
-    private void modificar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar2MouseClicked
-
-    private void modificar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar4MouseClicked
-
-    private void modificar5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar5MouseClicked
-
-    private void modificar6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar6MouseClicked
-
-    private void modificar7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar7MouseClicked
-
-    private void modificar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar1MouseClicked
-
-    private void modificar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar5ActionPerformed
-
-    private void modificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modificar1ActionPerformed
 
     private void coloca_datosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coloca_datosMouseClicked
 //        modificar1.setText(jTable2.getValueAt(jTable2.getSelectedRowCount()-1, 0).toString());

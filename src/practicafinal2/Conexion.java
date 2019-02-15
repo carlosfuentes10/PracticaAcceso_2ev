@@ -252,13 +252,14 @@ public class Conexion {
     }
     
     
-     public void modificarEmpleadoNuevo (String ID_tienda,String nombre, String apellido, String DNI, String telefono, String direccion, String puesto) {
+     public void modificarEmpleadoNuevo (String ID_tienda,String nombre, String apellido, String DNI_cliente, String telefono, String direccion, String puesto) {
         try {
             conect.setAutoCommit(false);
 
             Statement sta = conect.createStatement();
 
-            sta.executeUpdate("UPDATE empleado SET DNI_empleado('" + ID_tienda + "', '" + DNI + "', '" + nombre + "', '" + apellido + "', '" + direccion + "', '" + telefono + "', '" + puesto + "')");
+           
+            String query = "UPDATE  empleado SET  ID_tienda='" + ID_tienda + "', nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono + ", direccion=" + direccion + ", puesto=" + puesto + " WHERE DNI_cliente='" + DNI_cliente+ "';";
 
             System.out.println("modificado empleado correctamente");
 
